@@ -1,0 +1,17 @@
+{
+  "name": "conf_pr",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Простой сайт бронирования помещений с PostgreSQL",
+  "type": "module",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "check": "node --check src/server.js && node --check src/services.js && node --check src/database.js && node --check src/security.js && node --check src/validation.js && node --check public/app.js",
+    "test": "node --test --test-concurrency=1"
+  },
+  "dependencies": { "pg": "^8.16.0" }
+}
